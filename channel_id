@@ -1,0 +1,22 @@
+<?php
+// replace with your url you got here : https://my.slack.com/services/new/incoming-webhook
+$INCOMING_WEBHOOK_URL = "";
+$USERNAME = "Y U NO GOOGLE GOD DAMNIT?";
+$ICON = ":troll:";
+$text = $_POST['text'];
+// replaced "channel_name" with "channel_id" to allow this to work in private groups and direct messages
+$channel_id = $_POST['channel_id'];
+$curl = curl_init($INCOMING_WEBHOOK_URL);
+curl_setopt($curl, CURLOPT_POST, true);
+$response = "https://www.google.com/?#q=".rawurlencode($text);
+$payload = array(
+    'text' => rawurlencode($response),
+    'username' => $USERNAME,
+    'icon_emoji' => $ICON,
+    'channel' => $channel_id
+);
+$jsonPayload = "payload=".json_encode($payload);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $jsonPayload);
+$return = curl_exec($curl);
+curl_close($curl);
+?>
