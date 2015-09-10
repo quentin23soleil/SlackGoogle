@@ -23,7 +23,7 @@ How To Install
 ==============
 
 - Put this php file on your server
-- [Create a new Slack Slash Command](https://my.slack.com/services/new/slash-commands) with whatever you want. Mine is /g for exemple. Make it point to your php file. Keep the POST method (or change it also in the php file). Add a description/hint if you want to.
+- [Create a new Slack Slash Command](https://my.slack.com/services/new/slash-commands) with whatever you want. Mine is /g for example. Make it point to your php file. Keep the POST method (or change it also in the php file). Add a description/hint if you want to.
 - [Create an incoming webhook](https://my.slack.com/services/new/incoming-webhook) (we don't really care about the channel, my script uses the channel of the slash command yo) and paste the ```Webhook URL``` you'll get at the top of the php file.
 - Profit
 
